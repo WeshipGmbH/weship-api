@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-select.min.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="assets/niceselectpicker/nice-select.css">
+    <link rel="stylesheet" href="assets/animation/animate.css">
+    <link rel="stylesheet" href="assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/prism/prism.css">
+    <link rel="stylesheet" href="css/style-main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>WeShip REST API Documentation</title>
+</head>
+
+<body class="doc wide-container" data-spy="scroll" data-target="#navbar-example3" data-scroll-animation="true" data-offset="70">
+<div class="body_wrapper">
+    <nav class="navbar navbar-expand-lg menu_one dark_menu display_none sticky-nav py-3">
+        <div class="container custom_container">
+            <a class="navbar-brand header_logo" href="index.html">
+                <img class="first_logo sticky_logo main_logo" src="img/weship.svg" alt="logo">
+            </a>
+
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu_toggle">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="hamburger-cross">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav menu ml-auto"></div>
+                <div class="right-nav">
+                    <a class="nav_btn tp_btn" href="https://portal.weship.at/web/login" target="_blank">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile_main_menu dark_menu sticky-nav ">
+        <div class="container">
+            <div class="mobile_menu_left">
+                <button type="button" class="navbar-toggler mobile_menu_btn">
+                    <span class="menu_toggle ">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </button>
+                <a class="navbar-brand header_logo" href="index.html">
+                    <img class="sticky_logo main_logo" src="img/weship.svg" srcset="img/logo-2x.png 2x" alt="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="click_capture"></div>
+    <div class="side_menu">
+        <div class="mobile_menu_header">
+            <div class="mobile_logo">
+                <a class="navbar-brand header_logo" href="index.html">
+                    <img class="sticky_logo main_logo" src="img/weship.svg" srcset="img/logo-2x.png 2x" alt="logo">
+                </a>
+            </div>
+        </div>
+        <div class="mobile_nav_wrapper">
+            <div class="mobile_nav_top">
+                <aside class="doc_left_sidebarlist">
+                    <div class="scroll">
+                        <ul class="list-unstyled nav-sidebar">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link"><img src="img/side-nav/home.svg">Getting Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="authentication.html" class="nav-link">
+                                    <img src="img/side-nav/auth.svg">
+                                    Authentication
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a href="shipment.html" class="nav-link active"><img src="img/side-nav/shipment.svg">Shipment</a>
+                                <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                <ul class="list-unstyled dropdown_nav">
+                                    <li><a href="shipment.html#read-picking">Read</a></li>
+                                    <li><a href="shipment.html#create-picking">Create</a></li>
+                                    <li><a href="shipment.html#update-picking">Update</a></li>
+                                    <li><a href="shipment.html#delete-picking">Delete</a></li>
+                                    <li><a href="shipment.html#picking-properties">Properties</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="tracking.html" class="nav-link"><img src="img/side-nav/tracking.svg">Tracking</a>
+                                <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                <ul class="list-unstyled dropdown_nav">
+                                    <li><a href="tracking.html#read-tracking">Read</a></li>
+                                    <li><a href="tracking.html#tracking-properties">Properties</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="partner.html" class="nav-link"><img src="img/side-nav/partner.svg">Partner</a>
+                                <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                <ul class="list-unstyled dropdown_nav">
+                                    <li><a href="partner.html#read-partner">Read</a></li>
+                                    <li><a href="partner.html#create-partner">Create</a></li>
+                                    <li><a href="partner.html#update-partner">Update</a></li>
+                                    <li><a href="partner.html#delete-partner">Delete</a></li>
+                                    <li><a href="partner.html#partner-properties">Properties</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="product.html" class="nav-link"><img src="img/side-nav/product.svg">Product</a>
+                                <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                <ul class="list-unstyled dropdown_nav">
+                                    <li><a href="product.html#read-product">Read</a></li>
+                                    <li><a href="product.html#create-product">Create</a></li>
+                                    <li><a href="product.html#update-product">Update</a></li>
+                                    <li><a href="product.html#delete-product">Delete</a></li>
+                                    <li><a href="product.html#product-properties">Properties</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <section class="doc_documentation_area" id="sticky_doc">
+        <div class="overlay_bg"></div>
+        <div class="container custom_container">
+            <div class="row">
+                <div class="col-lg-3 doc_mobile_menu display_none">
+                    <aside class="doc_left_sidebarlist">
+                        <div class="open_icon" id="left">
+                            <i class="arrow_carrot-right"></i>
+                            <i class="arrow_carrot-left"></i>
+                        </div>
+                        <div class="scroll">
+                            <ul class="list-unstyled nav-sidebar">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link"><img src="img/side-nav/home.svg">Getting Started</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="authentication.html" class="nav-link">
+                                        <img src="img/side-nav/auth.svg">
+                                        Authentication
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="shipment.html" class="nav-link active"><img src="img/side-nav/shipment.svg">Shipment</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="shipment.html#read-picking">Read</a></li>
+                                        <li><a href="shipment.html#create-picking">Create</a></li>
+                                        <li><a href="shipment.html#update-picking">Update</a></li>
+                                        <li><a href="shipment.html#delete-picking">Delete</a></li>
+                                        <li><a href="shipment.html#picking-properties">Properties</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="tracking.html" class="nav-link"><img src="img/side-nav/tracking.svg">Tracking</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="tracking.html#read-tracking">Read</a></li>
+                                        <li><a href="tracking.html#tracking-properties">Properties</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="partner.html" class="nav-link"><img src="img/side-nav/partner.svg">Partner</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="partner.html#read-partner">Read</a></li>
+                                        <li><a href="partner.html#create-partner">Create</a></li>
+                                        <li><a href="partner.html#update-partner">Update</a></li>
+                                        <li><a href="partner.html#delete-partner">Delete</a></li>
+                                        <li><a href="partner.html#partner-properties">Properties</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="product.html" class="nav-link"><img src="img/side-nav/product.svg">Product</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="product.html#read-product">Read</a></li>
+                                        <li><a href="product.html#create-product">Create</a></li>
+                                        <li><a href="product.html#update-product">Update</a></li>
+                                        <li><a href="product.html#delete-product">Delete</a></li>
+                                        <li><a href="product.html#product-properties">Properties</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-9">
+                    <article id="post" class="documentation_info">
+                        <div class="documentation_body" id="documentation">
+                            <div class="shortcode_title">
+                                <div class="btn">Rest API v2 </div>
+                                <h1>Shipment</h1>
+                                <p>
+                                    This article guides you through how to manage inbound and outbound deliveries.
+                                </p>
+                            </div>
+                            
+                            <div class="toggle_shortcode">
+                                <div class="shortcode_title">
+                                    <h3 id="read-picking">Read</h3>
+                                </div>
+                                <h5>
+                                    /api/stock.picking
+                                </h5>
+                                <p>
+                                    Read all your picking orders.
+                                </p>
+                                <div class="btn btn-success mb-3"><b>GET</b></div>
+                                <div class="highlight">
+                                    <pre>
+                                        <code class="language-shell" data-lang="shell">
+                                            curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/api/stock.picking -X GET -H
+                                            "access_token: XXXXXXXXXXXXXXXXX"
+                                        </code>
+                                    </pre>
+                                </div>
+                                <a class="toggle_btn collapsed" data-toggle="collapse" href="#readAllResponse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    Response
+                                </a>
+                                <div class="collapse multi-collapse" id="readAllResponse">
+                                    <div class="card card-body toggle_body">
+                                        <div class="highlight">
+                                            <pre>
+                                                <code class="language-json" data-lang="json">
+                                                    {
+                                                        "code":200,
+                                                        "data":{
+                                                           "count":2,
+                                                           "results":[
+                                                              {
+                                                                "origin":"1234567890",
+                                                                "carrier_tracking_ref":null,
+                                                                "create_date":"2022-06-08 12:00:00+00:00",
+                                                                "weight":3.0,
+                                                                "origin_id":{
+                                                                    "picking_type_code":null,
+                                                                    "id":null,
+                                                                    "name":null
+                                                                },
+                                                                "dpd_label_ids":[
+                                                                    
+                                                                ],
+                                                                "shipping_weight":null,
+                                                                "send_email":null,
+                                                                "pack_operation_product_ids":[
+                                                                    
+                                                                ],
+                                                                "partner_id":{
+                                                                    "city":"Graz",
+                                                                    "id":233592,
+                                                                    "name":"Martina Musterfrau",
+                                                                },
+                                                                "id":1234,
+                                                                "note":null,
+                                                                "date_done":null,
+                                                                "picking_type_id":{
+                                                                    "id":953,
+                                                                    "name":"Outbound"
+                                                                },
+                                                                "location_id":{
+                                                                    "id":4200,
+                                                                    "name":"Warehouse"
+                                                                },
+                                                                "move_type":"one",
+                                                                "name_external":null,
+                                                                "company_id":{
+                                                                    "id":184,
+                                                                    "name":"We Ship Fulfillment GmbH"
+                                                                },
+                                                                "priority":"1",
+                                                                "state":"confirmed",
+                                                                "picking_type_code":"outgoing",
+                                                                "location_dest_id":{
+                                                                    "id":9,
+                                                                    "name":"Customer"
+                                                                },
+                                                                "move_lines":[
+                                                                    {
+                                                                        "product_id":{
+                                                                            "attribute_line_ids":[
+                                                                            
+                                                                            ],
+                                                                            "barcode":null,
+                                                                            "type":"product",
+                                                                            "id":42964,
+                                                                            "name":"Test Product"
+                                                                        },
+                                                                        "product_uom":{
+                                                                            "id":1,
+                                                                            "name":"Unit(s)"
+                                                                        },
+                                                                        "product_uom_qty":12.0,
+                                                                        "rebound_check":null,
+                                                                        "inbound_check":null,
+                                                                        "state":"done",
+                                                                        "origin_returned_move_id":{
+                                                                            "id":null,
+                                                                            "name":null
+                                                                        },
+                                                                        "id":985865,
+                                                                        "name":"Test Product"
+                                                                    }
+                                                                ],
+                                                                "min_date":"2022-06-08 13:44:46+00:00",
+                                                                "carrier_id":{
+                                                                    "id":150,
+                                                                    "name":"GLS Austria"
+                                                                },
+                                                                "name":"1-O-220608168022",
+                                                                "send_sms":null,
+                                                                "inspection_with_product_counting":null,
+                                                                "recurring_shipping":null
+                                                              },
+                                                              {...}
+                                                           ]
+                                                        }
+                                                    }
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <h5>
+                                    /api/stock.picking/&lt;id&gt;
+                                </h5>
+                                <p>
+                                    Read a single picking order with the provided ID.
+                                </p>
+                                <div class="btn btn-success mb-3"><b>GET</b></div>
+                                <div class="highlight">
+                                    <pre>
+                                        <code class="language-shell" data-lang="shell">
+                                            curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/api/stock.picking/1234 -X GET -H
+                                            "access_token: XXXXXXXXXXXXXXXXX"
+                                        </code>
+                                    </pre>
+                                </div>
+                                
+                                <a class="toggle_btn collapsed" data-toggle="collapse" href="#readSingleResponse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    Response
+                                </a>
+                                <div class="collapse multi-collapse" id="readSingleResponse">
+                                    <div class="card card-body toggle_body">
+                                        <div class="highlight">
+                                            <pre>
+                                                <code class="language-json" data-lang="json">
+                                                    {
+                                                        "code":200,
+                                                        "data":{
+                                                           "origin":"1234567890",
+                                                           "carrier_tracking_ref":null,
+                                                           "create_date":"2022-06-08 12:00:00+00:00",
+                                                           "weight":3.0,
+                                                           "origin_id":{
+                                                              "picking_type_code":null,
+                                                              "id":null,
+                                                              "name":null
+                                                           },
+                                                           "dpd_label_ids":[
+                                                              
+                                                           ],
+                                                           "shipping_weight":null,
+                                                           "send_email":null,
+                                                           "pack_operation_product_ids":[
+                                                              
+                                                           ],
+                                                           "partner_id":{
+                                                              "city":"Graz",
+                                                              "id":233592,
+                                                              "name":"Martina Musterfrau",
+                                                           },
+                                                           "id":1234,
+                                                           "note":null,
+                                                           "date_done":null,
+                                                           "picking_type_id":{
+                                                              "id":953,
+                                                              "name":"Outbound"
+                                                           },
+                                                           "location_id":{
+                                                              "id":4200,
+                                                              "name":"Warehouse"
+                                                           },
+                                                           "move_type":"one",
+                                                           "name_external":null,
+                                                           "company_id":{
+                                                              "id":184,
+                                                              "name":"We Ship Fulfillment GmbH"
+                                                           },
+                                                           "priority":"1",
+                                                           "state":"confirmed",
+                                                           "picking_type_code":"outgoing",
+                                                           "location_dest_id":{
+                                                              "id":9,
+                                                              "name":"Customer"
+                                                           },
+                                                           "move_lines":[
+                                                              {
+                                                                 "product_id":{
+                                                                    "attribute_line_ids":[
+                                                                       
+                                                                    ],
+                                                                    "barcode":null,
+                                                                    "type":"product",
+                                                                    "id":42964,
+                                                                    "name":"Test Product"
+                                                                 },
+                                                                 "product_uom":{
+                                                                    "id":1,
+                                                                    "name":"Unit(s)"
+                                                                 },
+                                                                 "product_uom_qty":12.0,
+                                                                 "rebound_check":null,
+                                                                 "inbound_check":null,
+                                                                 "state":"done",
+                                                                 "origin_returned_move_id":{
+                                                                    "id":null,
+                                                                    "name":null
+                                                                 },
+                                                                 "id":985865,
+                                                                 "name":"Test Product"
+                                                              }
+                                                           ],
+                                                           "min_date":"2022-06-08 13:44:46+00:00",
+                                                           "carrier_id":{
+                                                              "id":150,
+                                                              "name":"GLS Austria"
+                                                           },
+                                                           "name":"1-O-220608168022",
+                                                           "send_sms":null,
+                                                           "inspection_with_product_counting":null,
+                                                           "recurring_shipping":null
+                                                        },
+                                                        "success":true
+                                                     }
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="shortcode_title">
+                                    <h3 id="create-picking">Create</h3>
+                                </div>
+                                <h5>
+                                    /res.company/&lt;id&gt;/create_api_company_stock_picking
+                                </h5>
+                                <p>
+                                    Create a single picking order with product and customer data on the fly.
+                                </p>
+                                <div class="btn btn-info mb-4"><b>POST</b></div>
+                                <blockquote class="media notice notice-warning mt-3 mb-5">
+                                    <i class="icon_info_alt"></i>
+                                    <div class="media-body">
+                                        <p><strong>Linking a product</strong></p>
+                                        <p>
+                                            If you already have a product in our system, we will try to match it through the EAN code. Otherwise, a new product gets created. Keep in mind if you create an outbound with a new product, it will be on hold, until we receive an inbound.
+                                        </p>
+                                    </div>
+                                </blockquote>
+                                <div class="tab_shortcode">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Request</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">picking_data</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="highlight">
+                                                <pre>
+                                                    <code class="language-shell" data-lang="shell">
+                                                        curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/res.company/1234/create_api_company_stock_picking 
+                                                        -X POST -H "access_token: XXXXXXXXXXXXXXXXX " -d picking_data
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                            <div class="highlight">
+                                                <pre>
+                                                    <code class="language-json" data-lang="json">
+                                                        {
+                                                            "customer_address":{
+                                                               "name":"Max Mustermann",
+                                                               "email":"max.mustermann@example.org",
+                                                               "phone":"+43664 123456789",
+                                                               "street":"Musterweg 5",
+                                                               "street2":"Tür 12",
+                                                               "city":"Graz",
+                                                               "zip":"8010",
+                                                               "state_code":"ST",
+                                                               "country_code":"AT"
+                                                            },
+                                                            "products":[
+                                                               {
+                                                                  "name":"Test Product 1",
+                                                                  "ean":"BC12345678901",
+                                                                  "price":19.90,
+                                                                  "quantity":12,
+                                                                  "hs_code":"12345678",
+                                                                  "origin_country_code":"DE",
+                                                                  "tracking":"lot",
+                                                                  "lot_number":"12345678",
+                                                                  "lot_expiry_date":"2023-10-12",
+                                                                  "height_meter":0.2,
+                                                                  "width_meter":0.3,
+                                                                  "length_meter":0.5,
+                                                                  "weight_kg":0.25
+                                                               },
+                                                               {
+                                                                  "name":"Test Product 2",
+                                                                  "ean":"BC23456789012",
+                                                                  "price":29.90,
+                                                                  "quantity":5,
+                                                                  "hs_code":"23456781",
+                                                                  "origin_country_code":"DE",
+                                                                  "tracking":null,
+                                                                  "height_meter":0.2,
+                                                                  "width_meter":0.3,
+                                                                  "length_meter":0.5,
+                                                                  "weight_kg":0.25
+                                                               }
+                                                            ],
+                                                            "origin":"1234567890",
+                                                            "expected_date":"2022-07-01 00:00:00",
+                                                            "picking_type":"outgoing"
+                                                         }
+                                                    </code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="toggle_btn collapsed" data-toggle="collapse" href="#createRecommendedResponse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    Response
+                                </a>
+                                <div class="collapse multi-collapse" id="createRecommendedResponse">
+                                    <div class="card card-body toggle_body">
+                                        <div class="highlight">
+                                            <pre>
+                                                <code class="language-json" data-lang="json">
+                                                    {"code": 200, "data": "1234", "success": true}
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="shortcode_title">
+                                    <h3 id="update-picking">Update</h3>
+                                </div>
+                                <h5>
+                                    /api/stock.picking&lt;id&gt;
+                                </h5>
+                                <p>
+                                    Update a single picking order.
+                                </p>
+                                <div class="btn btn-primary mb-3"><b>PUT</b></div>
+                                <div class="highlight">
+                                    <pre>
+                                        <code class="language-shell" data-lang="shell">
+                                            curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/api/stock.picking/1234 -X PUT -H 
+                                            "access_token: XXXXXXXXXXXXXXXXX" -d '{"origin": "Test-1234", "min_date":"2022-08-10 05:00:00+00:00"}'
+                                        </code>
+                                    </pre>
+                                </div>
+                                
+                                <a class="toggle_btn collapsed" data-toggle="collapse" href="#updateResponse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    Response
+                                </a>
+                                <div class="collapse multi-collapse" id="updateResponse">
+                                    <div class="card card-body toggle_body">
+                                        <div class="highlight">
+                                            <pre>
+                                                <code class="language-json" data-lang="json">
+                                                    {
+                                                        "code":200,
+                                                        "data":{
+                                                           "origin":"Test-1234",
+                                                           "carrier_tracking_ref":null,
+                                                           "create_date":"2022-06-08 12:00:00+00:00",
+                                                           "weight":3.0,
+                                                           "origin_id":{
+                                                              "picking_type_code":null,
+                                                              "id":null,
+                                                              "name":null
+                                                           },
+                                                           "dpd_label_ids":[
+                                                              
+                                                           ],
+                                                           "shipping_weight":null,
+                                                           "send_email":null,
+                                                           "pack_operation_product_ids":[
+                                                              
+                                                           ],
+                                                           "wave_id":{
+                                                              "state":null,
+                                                              "id":null,
+                                                              "name":null
+                                                           },
+                                                           "partner_id":{
+                                                              "city":"Graz",
+                                                              "id":233592,
+                                                              "name":"Martina Musterfrau",
+                                                           },
+                                                           "id":1234,
+                                                           "note":null,
+                                                           "date_done":null,
+                                                           "picking_type_id":{
+                                                              "id":953,
+                                                              "name":"Outbound"
+                                                           },
+                                                           "location_id":{
+                                                              "id":4200,
+                                                              "name":"Warehouse"
+                                                           },
+                                                           "move_type":"one",
+                                                           "name_external":null,
+                                                           "company_id":{
+                                                              "id":184,
+                                                              "name":"We Ship Fulfillment GmbH"
+                                                           },
+                                                           "priority":"1",
+                                                           "state":"confirmed",
+                                                           "picking_type_code":"outgoing",
+                                                           "location_dest_id":{
+                                                              "id":9,
+                                                              "name":"Customer"
+                                                           },
+                                                           "move_lines":[
+                                                              {
+                                                                 "product_id":{
+                                                                    "attribute_line_ids":[
+                                                                       
+                                                                    ],
+                                                                    "barcode":null,
+                                                                    "type":"product",
+                                                                    "id":42964,
+                                                                    "name":"Test Product"
+                                                                 },
+                                                                 "product_uom":{
+                                                                    "id":1,
+                                                                    "name":"Unit(s)"
+                                                                 },
+                                                                 "product_uom_qty":12.0,
+                                                                 "rebound_check":null,
+                                                                 "inbound_check":null,
+                                                                 "state":"done",
+                                                                 "origin_returned_move_id":{
+                                                                    "id":null,
+                                                                    "name":null
+                                                                 },
+                                                                 "id":985865,
+                                                                 "name":"Test Product"
+                                                              }
+                                                           ],
+                                                           "min_date":"2022-08-10 05:00:00+00:00",
+                                                           "carrier_id":{
+                                                              "id":150,
+                                                              "name":"GLS Austria"
+                                                           },
+                                                           "name":"1-O-220608168022",
+                                                           "send_sms":null,
+                                                           "inspection_with_product_counting":null,
+                                                           "recurring_shipping":null
+                                                        },
+                                                        "success":true
+                                                     }
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="shortcode_title">
+                                    <h3 id="delete-picking">Delete</h3>
+                                </div>
+                                <h5>
+                                    /api/stock.picking&lt;id&gt;
+                                </h5>
+                                <p>
+                                    Delete a single picking order.
+                                </p>
+                                <div class="btn btn-danger mb-3"><b>DELETE</b></div>
+                                <div class="highlight">
+                                    <pre>
+                                        <code class="language-shell" data-lang="shell">
+                                            curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/api/stock.picking/1234 -X DELETE -H
+                                            "access_token: XXXXXXXXXXXXXXXXX"
+                                        </code>
+                                    </pre>
+                                </div>
+                                
+                                <a class="toggle_btn collapsed" data-toggle="collapse" href="#deleteResponse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    Response
+                                </a>
+                                <div class="collapse multi-collapse" id="deleteResponse">
+                                    <div class="card card-body toggle_body">
+                                        <div class="highlight">
+                                            <pre>
+                                                <code class="language-json" data-lang="json">
+                                                    {"code": 200, "data": {"id": 1234}, "success": true}
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="shortcode_title">
+                                    <h3 id="picking-properties">Properties</h3>
+                                </div>
+                                <h5>
+                                    create_api_company_stock_picking
+                                </h5>
+                                <p>Properties related to create a picking order.</p>
+                                <blockquote class="media notice notice-danger mt-3 mb-3">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <p><strong>IMPORTANT: Only for creating an order</strong></p>
+                                        <p>
+                                            The property tables below is only used for <strong>create_api_company_stock_picking</strong> (see above). In the future, all requests and reponses will be updated in the same way.
+                                        </p>
+                                    </div>
+                                </blockquote>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">customer_address</th>
+                                                <td><div class="caniuse_button teal_btn">Object</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    Recipient of shipment<br/>
+                                                    <span class="property_parameter">weship.customer</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">expected_date</th>
+                                                <td><div class="caniuse_button violate_btn">Datetime</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    Scheduled date of shipment. <br/>
+                                                    format : <span class="property_parameter">'YYYY-MM-DD HH:MM:SS'</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">picking_type</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    Defines the type of shipment
+                                                    <span class="property_parameter">outgoing</span>
+                                                    <span class="property_parameter">incoming</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">products</th>
+                                                <td><div class="caniuse_button purpale_btn">List</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    Products related to the shipping<br/>
+                                                    <span class="property_parameter">weship.products</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">origin</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Your order reference number</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br/>
+
+                                <h5>
+                                    weship.customer
+                                </h5>
+                                <p>Properties related to the weship.customer table.</p>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">city</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Name of the city</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">country_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Official ISO 3166 alpha-2 shortcode</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">email</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Email address</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>First and last name</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">phone</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Phone or mobile number</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">state_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Official ISO 3166 alpha-2 shortcode</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">street</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Name of the street, including house number</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">street2</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Additional address information</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">zip</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>ZIP code of the city</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br/>
+
+                                <h5>
+                                    weship.products
+                                </h5>
+                                <p>Properties related to the weship.products table.</p>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">ean</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Unique barcode</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">height_meter</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td></td>
+                                                <td>Height as m, including packaging.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">hs_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Specific tariff code for international shipments</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">length_meter</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td></td>
+                                                <td>Length as meter, including packaging.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Name</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">origin_country_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Origin country code. Important for tariff</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">price</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td></td>
+                                                <td>Default sale price. Important for tariff</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">quantity</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Amount of products to be shipped</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">tracking</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>
+                                                    If product has expiry date, must be set.
+                                                    <span class="property_parameter">lot</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">lot_number</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Name or number of the lot.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">lot_expiry_date</th>
+                                                <td><div class="caniuse_button violate_btn">Date</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    Date when the product is going to be expire <br/>
+                                                    format : <span class="property_parameter">'YYYY-MM-DD'</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">origin_country_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Origin country code. Important for tariff</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">weight_kg</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Weight as kg, including packaging</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">width_meter</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Width as m, including packaging</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br/>
+
+                                <h5>
+                                    stock.picking
+                                </h5>
+                                <p>Properties related to the stock.picking table.</p>
+                                <blockquote class="media notice notice-danger mt-3 mb-3">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <p><strong>IMPORTANT: Only to read and update an order</strong></p>
+                                        <p>
+                                            The property tables below is only used for <strong>read</strong> and <strong>update</strong> a picking order. In the future, all requests and reponses will be updated the same way as in <strong>create_api_company_stock_picking</strong>.
+                                        </p>
+                                    </div>
+                                </blockquote>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">carrier_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Carrier to use for the shipment <br/>
+                                                    <span class="property_parameter">weship.carrier</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">carrier_tracking_ref</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Tracking reference from carrier.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">create_date</th>
+                                                <td><div class="caniuse_button violate_btn">Datetime</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>
+                                                    Datetime of when the order record was created. <br/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">company_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>WeShip company, based on location.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">date_done</th>
+                                                <td><div class="caniuse_button violate_btn">Datetime</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>
+                                                    Date and time when shipment was ready to be picked up by carrier <br/>
+                                                    format : <span class="property_parameter">'YYYY-MM-DD HH:MM:SS'</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">dpd_label_ids</th>
+                                                <td><div class="caniuse_button purpale_btn">List</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>
+                                                    List of all dpd labels <br/>
+                                                    <span class="property_parameter">dpd.label</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Unique identifier of picking order</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">location_dest_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>Location, to which the shipment is sent.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">location_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>Location, from where the shipment is sent.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">min_date</th>
+                                                <td><div class="caniuse_button violate_btn">Datetime</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Scheduled date of shipment. <br/>
+                                                    format : <span class="property_parameter">'YYYY-MM-DD HH:MM:SS'</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">move_lines</th>
+                                                <td><div class="caniuse_button purpale_btn">List</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    List of all product data to deliver <br/>
+                                                    <span class="property_parameter">stock.move</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">move_type</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Specifies goods to be delivered partially, or at once. 
+                                                    <br/>
+                                                    <span class="property_parameter">direct</span> (partially) <br/>
+                                                    <span class="property_parameter">one</span> (all at once)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Name of picking order with sequence</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">note</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Additional delivery information</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">origin</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Your order reference number</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">origin_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>Link to ID of an existing picking order, if exists.</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">pack_operation_product_ids</th>
+                                                <td><div class="caniuse_button purpale_btn">List</div></td>
+                                                <td></td>
+                                                <td>
+                                                    List of all packing operations <br/>
+                                                    <span class="property_parameter">stock.pack.operation</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">partner_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>
+                                                    The recipient of the shipment, your customer <br/>
+                                                    <span class="property_parameter">res.partner</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">picking_type_id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button dark_grey_btn">Required</div></td>
+                                                <td>Defines if it is an incoming or outgoing shipment</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">picking_type_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Name of shipment type</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">priority</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Priority of shipment (currently not used)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">recurring_shipping</th>
+                                                <td><div class="caniuse_button light_red">Boolean</div></td>
+                                                <td></td>
+                                                <td>Mark delivery as recurring (currently not used)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">send_email</th>
+                                                <td><div class="caniuse_button light_red">Boolean</div></td>
+                                                <td></td>
+                                                <td>Mark delivery to send email</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">send_sms</th>
+                                                <td><div class="caniuse_button light_red">Boolean</div></td>
+                                                <td></td>
+                                                <td>Mark delivery to send sms (currently not used)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">shipping_weight</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Total weight of products, including shipping box</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">state</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Current status of the order</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">weight</th>
+                                                <td><div class="caniuse_button yellow_btn">Float</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Total weight of products, excluding shipping box</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br/>
+                                <h5>
+                                    stock.move
+                                </h5>
+                                <p>Properties related to the stock.move table</p>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Unique identifier</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">inbound_check</th>
+                                                <td><div class="caniuse_button light_red">Boolean</div></td>
+                                                <td></td>
+                                                <td>Check product on inbound (currently not used for single product)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">name</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td></td>
+                                                <td>Name of product</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">product</th>
+                                                <td><div class="caniuse_button teal_btn">Object</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Product record<br/>
+                                                    <span class="property_parameter">product.product</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">product_uom</th>
+                                                <td><div class="caniuse_button teal_btn">Object</div></td>
+                                                <td></td>
+                                                <td>
+                                                    Unit of measurement for product<br/>
+                                                    <span class="property_parameter">product.uom</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">product_uom_qty</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td></td>
+                                                <td>Total amount of shipping products</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">rebound_check</th>
+                                                <td><div class="caniuse_button light_red">Boolean</div></td>
+                                                <td></td>
+                                                <td>Check product on return (currently not used for single product)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">state</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Current status of the shipping products</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br/>
+                                <h5>
+                                    dpd.labels
+                                </h5>
+                                <p>Properties related to the dpd.labels table</p>
+                                <div class="basic_table pt-2">
+                                    <table class="table basic_table_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-3">Field</th>
+                                                <th class="col-md-2">Data type</th>
+                                                <th class="col-md-2"></th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">dpd_code</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Shortcode of tracking event</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">dpd_url</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>URL to shipment tracking</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">id</th>
+                                                <td><div class="caniuse_button blue">Int</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Unique identifier</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">information</th>
+                                                <td><div class="caniuse_button green_btn">Char</div></td>
+                                                <td><div class="caniuse_button grey_btn">Read-Only</div></td>
+                                                <td>Additional information of shipment</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Topic Area =================-->
+
+    <footer class="forum_footer_area">
+        <div class="container">
+            <center>
+				<p>
+					© 2022 We Ship Fulfillment GmbH
+				</p>
+			</center>
+        </div>
+    </footer>
+</div>
+
+<!-- Back to top button -->
+<a id="back-to-top" title="Back to Top"></a>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/pre-loader.js"></script>
+<script src="assets/bootstrap/js/popper.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap-select.min.js"></script>
+<script src="assets/niceselectpicker/jquery.nice-select.min.js"></script>
+<script src="assets/wow/wow.min.js"></script>
+<script src="assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/font-size/js/rv-jquery-fontsize-2.0.3.min.js"></script>
+<script src="js/anchor.js"></script>
+<script src="assets/prism/prism.js"></script>
+<script src="assets/magnify-pop/jquery.magnific-popup.min.js"></script>
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
