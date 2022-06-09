@@ -880,6 +880,24 @@ p kbd {
   background: #30ace1;
 }
 
+.link_getting_started{
+  transition-duration: 0.3s;
+}
+
+.link_getting_started:hover h5{
+  color: #30ace1;
+}
+
+.link_getting_started:hover .icon{
+  transition-duration: 0.3s;
+  transform: scale(1.2);
+  box-shadow: 0 15px 40px -5px rgb(0 0 0 / 6%);
+}
+
+.link_getting_started p{
+  color: #6b707f;
+}
+
 /*================= header area css ===============*/
 .navbar {
   border: 0;
