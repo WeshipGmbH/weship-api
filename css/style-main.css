@@ -6463,12 +6463,9 @@ body.remove .header_tabs_area.tab_fixed .header_tab_items {
   padding-bottom: 110px;
   z-index: 0;
   margin-top: 100px;
+  min-height: calc(100vh - 190px);
 }
-@media (min-width: 1400px) {
-  .doc_documentation_area {
-    min-height: 1000px;
-  }
-}
+
 .doc_documentation_area .overlay_bg {
   position: absolute;
   top: 0;
