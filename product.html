@@ -468,7 +468,7 @@
                                     <h3 id="update-product">Update</h3>
                                 </div>
                                 <h5>
-                                    /api/product.product&lt;id&gt;
+                                    /api/product.product/&lt;id&gt;
                                 </h5>
                                 <p>
                                     Update a single product.
@@ -550,7 +550,7 @@
                                     <h3 id="delete-product">Delete</h3>
                                 </div>
                                 <h5>
-                                    /api/product.product&lt;id&gt;
+                                    /api/product.product/&lt;id&gt;
                                 </h5>
                                 <p>
                                     Delete a single product.
@@ -560,7 +560,7 @@
                                     <pre>
                                         <code class="language-shell" data-lang="shell">
                                             curl -v -i -k -H "Content-Type: text/html" https://test.weship.at/api/product.product/10 -X
-                                            DELETE -H "access_token: XXXXXXXXXXXXXXXXX
+                                            DELETE -H "access_token: XXXXXXXXXXXXXXXXX"
                                         </code>
                                     </pre>
                                 </div>
@@ -582,7 +582,7 @@
                                 <br/>
                                 <br/>
                                 <div class="shortcode_title">
-                                    <h3 id="partner-properties">Properties</h3>
+                                    <h3 id="product-properties">Properties</h3>
                                 </div>
                                 <h5>
                                     product.product
